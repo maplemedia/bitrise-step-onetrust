@@ -1,29 +1,20 @@
-title: "STEP TEMPLATE"
-summary: A short summary of the step. Don't make it too long ;)
+title: |-
+  OneTrust App Scan
+summary: |
+  Send app build to OneTrust for scanning.
 description: |-
-  This is a Step template.
-  Contains everything what's required for a valid Stepman managed step.
-
-  A Step's description (and generally any `description` property)
-  can be a [Markdown](https://en.wikipedia.org/wiki/Markdown) formatted text.
-
-  To create your own Step:
-
-  1. Create a new repository on GitHub
-  2. Copy the files from this folder into your repository
-  3. That's all, you can use it on your own machine
-  4. Once you're happy with it you can share it with others.
-website: https://github.com/...
-source_code_url: https://github.com/...
-support_url: https://github.com/.../issues
+  Send app build to OneTrust for scanning
+website: https://github.com/maplemedia/bitrise-step-onetrust
+source_code_url: https://github.com/maplemedia/bitrise-step-onetrust
+support_url: https://github.com/maplemedia/bitrise-step-onetrust/issues
 host_os_tags:
   - osx-10.10
+  - ubuntu-16.04
 project_type_tags:
   - ios
   - android
-  - xamarin
 type_tags:
-  - script
+  - deploy
 is_requires_admin_user: true
 is_always_run: false
 is_skippable: false
@@ -36,23 +27,61 @@ deps:
   - name: wget
 run_if: ""
 inputs:
-  - example_step_input: Default Value - you can leave this empty if you want to
+  - onetrust_oauth_client_id: "$ONE_TRUST_OAUTH_CLIENT_ID"
     opts:
-      title: "Example Step Input"
-      summary: Summary. No more than 2-3 sentences.
+      title: "OneTrust OAuth Client ID"
+      summary: OneTrust authentication client identifier.
       description: |
-        Description of this input.
-
-        Can be Markdown formatted text.
+        OneTrust authentication [client identifier](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4681312183156832769135749784).
+      is_sensitive: true  
       is_expand: true
       is_required: true
-      value_options: []
-outputs:
-  - EXAMPLE_STEP_OUTPUT:
+      value_options: []  
+  - onetrust_oauth_client_secret: "$ONE_TRUST_OAUTH_CLIENT_SECRET"
     opts:
-      title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
+      title: "OneTrust OAuth Client Secret"
+      summary: OneTrust authentication client secret.
       description: |
-        Description of this output.
-
-        Can be Markdown formatted text.
+        OneTrust authentication [client secret](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4681312183156832769135749784).
+      is_sensitive: true
+      is_expand: true
+      is_required: true
+      value_options: []         
+  - onetrust_application_id: "$ONE_TRUST_APPLICATION_ID"
+    opts:
+      title: "OneTrust app ID"
+      summary: OneTrust application identifier.
+      description: |
+        OneTrust [application identifier](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4665059162728032767661646729).
+      is_expand: true
+      is_required: true
+      value_options: []      
+  - onetrust_application_platform: "$ONE_TRUST_APPLICATION_PLATFORM"
+    opts:
+      title: "OneTrust app platform"
+      summary: OneTrust application platform.
+      description: |
+        OneTrust [application platform](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4665059162728032767661646729).
+      is_expand: true
+      is_required: true
+      value_options:
+      - "ANDROID"
+      - "IOS"
+  - onetrust_upload_url: "$ONE_TRUST_UPLOAD_URL"
+    opts:
+      title: "OneTrust Upload URL"
+      summary: OneTrust app upload URL.
+      description: |
+        OneTrust app [upload URL](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4559248153966432767590471915).
+      is_expand: true
+      is_required: true
+      value_options: []        
+  - app_file_path: "$BITRISE_APK_PATH\n$BITRISE_ABB_PATH\n$BITRISE_IPA_PATH"
+    opts:
+      title: "App file path"
+      summary: .apk (android) or .abb (Android) or .ipa (iOS)
+      description: |
+        Path to the build artifact file to send to OneTrust for scanning.
+      is_expand: true
+      is_required: true
+      value_options: []      
