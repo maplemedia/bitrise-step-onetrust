@@ -58,7 +58,7 @@ inputs:
       is_expand: false
       is_required: true
       value_options: []      
-  - onetrust_application_platform:
+  - onetrust_application_platform: "ANDROID"
     opts:
       title: "OneTrust app platform"
       summary: OneTrust application platform.
