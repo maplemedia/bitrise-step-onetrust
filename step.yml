@@ -38,7 +38,6 @@ inputs:
       is_sensitive: true  
       is_expand: true
       is_required: true
-      value_options: []  
   - onetrust_oauth_client_secret: "$ONE_TRUST_OAUTH_CLIENT_SECRET"
     opts:
       title: "OneTrust OAuth Client Secret"
@@ -47,8 +46,7 @@ inputs:
         OneTrust authentication [client secret](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4681312183156832769135749784).
       is_sensitive: true
       is_expand: true
-      is_required: true
-      value_options: []         
+      is_required: true       
   - onetrust_application_id: "$ONE_TRUST_APPLICATION_ID"
     opts:
       title: "OneTrust app ID"
@@ -56,8 +54,7 @@ inputs:
       description: |
         OneTrust [application identifier](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4665059162728032767661646729).
       is_expand: false
-      is_required: true
-      value_options: []      
+      is_required: true    
   - onetrust_application_platform: "ANDROID"
     opts:
       title: "OneTrust app platform"
@@ -76,8 +73,7 @@ inputs:
       description: |
         OneTrust app [upload URL](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4559248153966432767590471915).
       is_expand: false
-      is_required: true
-      value_options: []        
+      is_required: true       
   - app_file_path: "$BITRISE_APK_PATH\n$BITRISE_ABB_PATH\n$BITRISE_IPA_PATH"
     opts:
       title: "App file path"
@@ -85,5 +81,4 @@ inputs:
       description: |
         Path to the build artifact file to send to OneTrust for scanning.
       is_expand: true
-      is_required: true
-      value_options: []      
+      is_required: true   
