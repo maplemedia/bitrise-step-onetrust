@@ -12,6 +12,7 @@ app:
   - MY_STEPLIB_REPO_FORK_GIT_URL: $MY_STEPLIB_REPO_FORK_GIT_URL
 
 
+workflows:
   # ----------------------------------------------------------------
   # --- workflows to Share this step into a Step Library
   audit-this-step:
