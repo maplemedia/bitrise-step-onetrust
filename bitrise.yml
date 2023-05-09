@@ -13,6 +13,11 @@ app:
 
 
 workflows:
+  deploy:
+    steps:
+    - path::./:
+        title: Run
+        run_if: true
   # ----------------------------------------------------------------
   # --- workflows to Share this step into a Step Library
   audit-this-step:

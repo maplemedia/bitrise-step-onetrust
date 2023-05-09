@@ -22,9 +22,11 @@ deps:
   brew:
   - name: git
   - name: wget
+  - name: jq
   apt_get:
   - name: git
   - name: wget
+  - name: jq
 run_if: ""
 inputs:
   - onetrust_oauth_client_id: "$ONE_TRUST_OAUTH_CLIENT_ID"
