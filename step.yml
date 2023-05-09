@@ -47,7 +47,7 @@ inputs:
       is_sensitive: true
       is_expand: true
       is_required: true       
-  - onetrust_application_id: "$ONE_TRUST_APPLICATION_ID"
+  - onetrust_application_id:
     opts:
       title: "OneTrust app ID"
       summary: OneTrust application identifier.
@@ -66,7 +66,7 @@ inputs:
       value_options:
       - "ANDROID"
       - "IOS"
-  - onetrust_upload_url: "$ONE_TRUST_UPLOAD_URL"
+  - onetrust_upload_url:
     opts:
       title: "OneTrust Upload URL"
       summary: OneTrust app upload URL.
