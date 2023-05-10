@@ -74,10 +74,10 @@ inputs:
         OneTrust app [upload URL](https://my.onetrust.com/s/article/UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94?topicId=0TO1Q000000wxmcWAA#UUID-c5d25a1c-e41d-91c0-1ccf-91e0757d0e94_section-idm4559248153966432767590471915).
       is_expand: false
       is_required: true       
-  - app_file_path: "$BITRISE_APK_PATH\n$BITRISE_ABB_PATH\n$BITRISE_IPA_PATH"
+  - app_file_path: "$BITRISE_APK_PATH\n$BITRISE_AAB_PATH\n$BITRISE_IPA_PATH"
     opts:
       title: "App file path"
-      summary: .apk (android) or .abb (Android) or .ipa (iOS)
+      summary: .apk (Android) or .aab (Android) or .ipa (iOS)
       description: |
         Path to the build artifact file to send to OneTrust for scanning.
       is_expand: true
